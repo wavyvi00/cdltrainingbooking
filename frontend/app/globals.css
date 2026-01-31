@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card-bg: #ffffff;
+  --card-border: #000000;
+  --card-hover-bg: #000000;
+  --card-hover-text: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hover-bg: var(--card-hover-bg);
+  --color-card-hover-text: var(--card-hover-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card-bg: #000000;
+    --card-border: #ffffff;
+    --card-hover-bg: #ffffff;
+    --card-hover-text: #000000;
+  }
+}
+
+body {
+  background: #09090b;
+  /* zinc-950 */
+  color: #ffffff;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Password reveal icon visibility for dark UI (Edge browser) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+/* WebKit password auto-fill styling for dark inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #09090b inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

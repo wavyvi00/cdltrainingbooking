@@ -1,0 +1,13 @@
+[project]
+id = "izfdldxgcgsglpbmdmwi"
+name = "RoyCuts"
+
+[functions]
+# Require valid JWT for all edge functions
+verify_jwt = true
+
+[functions.payment]
+verify_jwt = true
+
+[functions.list-payment-methods]
+verify_jwt = true
